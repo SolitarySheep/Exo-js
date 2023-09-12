@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Menu drop</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <style>
+      #navigation li {
+        list-style: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/couleur.html">Couleur</a>
+      <a href="/like.html">Like</a>
+      <a href="/clique.html">Clique</a>
+      <a href="/fondcouleur.html">FondCouleur</a>
+      <a href="/minuterie.html">Minuterie</a>
+      <a href="/menudropdown.html" aria-current="page">Menu dropdown</a>
+      <a href="/elementsplusieurstabs.html">Elements avec pls tabs</a>
+      <a href="/accordeon.html">Accordéon</a>
+      <a href="/navigationresponsivehamburger.html">Menu hamburger</a>
+      <a href="/modesombre.html">Mode sombre</a>
+    </nav>
+    <main>
+      <h1>Menu dropdown</h1>
+
+      <button id="menu">Menu</button>
+
+      <nav id="navigation">
+        <ul id="dropdown" class="hidden">
+          <li><a href="#">test 1</a></li>
+          <li><a href="#">test 2</a></li>
+          <li><a href="#">test3</a></li>
+        </ul>
+      </nav>
+
+      <script>
+        const menu = document.querySelector('#menu');
+        let isHidden = true;
+        const dropdown = document.querySelector('#dropdown');
+
+        menu.addEventListener('click', () => {
+          if (isHidden) {
+            dropdown.classList.remove('hidden');
+          } else {
+            dropdown.classList.add('hidden');
+          }
+          isHidden = !isHidden;
+        });
+      </script>
+    </main>
+  </body>
+</html>

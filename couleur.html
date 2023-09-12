@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Other page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Couleur</a>
+      <a href="/couleur.html" aria-current="page">Couleur</a>
+      <a href="/like.html">Like</a>
+      <a href="/clique.html">Clique</a>
+      <a href="/fondcouleur.html">FondCouleur</a>
+      <a href="/minuterie.html">Minuterie</a>
+      <a href="/menudropdown.html">Menu dropdown</a>
+      <a href="/elementsplusieurstabs.html">Elements avec pls tabs</a>
+      <a href="/accordeon.html">Accordéon</a>
+      <a href="/navigationresponsivehamburger.html">Menu hamburger</a>
+      <a href="/modesombre.html">Mode sombre</a>
+    </nav>
+    <main>
+      <h1>Changement couleur</h1>
+
+      <button id="bouton">Cliquez ici</button>
+
+      <script>
+        // console.log("Bien le bonjour");
+        //alert("que vous êtes un idiot");
+
+        let couleur = 'green';
+
+        //on récupère le bouton et le body
+        const boutton = document.querySelector('#bouton');
+        const body = document.querySelector('body');
+
+        //on change la couleur du body en rouge au démarrage
+        boutton.style.backgroundColor = couleur;
+
+        //console.log(bouton);
+        //on ajoute un évenement click au bouton
+        boutton.addEventListener('click', function () {
+          //quand qql click
+
+          //si la couleur est rouge => on passe au bleu
+          //sinon on passe au rouge
+          if (couleur === 'red') {
+            couleur = 'blue';
+            boutton.textContent = 'Passer au rouge';
+          } else {
+            couleur = 'red';
+            boutton.textContent = 'Passer au bleu';
+          }
+
+          body.style.backgroundColor = couleur;
+        });
+      </script>
+    </main>
+  </body>
+</html>
